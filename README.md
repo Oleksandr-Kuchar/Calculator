@@ -1,4 +1,4 @@
-# Simple calculator GUI with Tkinter library using
+# Simple calculator GUI Tkinter using library 
 ## Icon
 ![alt text](/calculator.ico)
 
