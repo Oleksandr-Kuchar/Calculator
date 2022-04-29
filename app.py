@@ -1,4 +1,4 @@
-# import module
+#import libraries
 import math
 from tkinter import * 
 from tkinter import font
@@ -90,7 +90,7 @@ class App(Frame):
             self.input_field.insert(0, round(self.solution, 10))
         except ZeroDivisionError:
             self.clear_input()
-            self.input_field.insert(0, "division error")
+            self.input_field.insert(0, "division by 0 error")
         except SyntaxError:
             self.clear_input()
             self.input_field.insert(0, "wrong value")
@@ -98,30 +98,39 @@ class App(Frame):
     # factorial
     def factorial(self):
         try:
-            self.solution = math.factorial(int(self.input_field.get()))
+            self.solution = math.factorial(eval(self.input_field.get()))
             self.clear_input()
             self.input_field.insert(0, self.solution)
         except ValueError:
+            self.clear_input()
+            self.input_field.insert(0, "wrong value")
+        except SyntaxError:
             self.clear_input()
             self.input_field.insert(0, "wrong value")
 
     # sqrt
     def sqrt(self):
         try:
-            self.solution = math.sqrt(float(self.input_field.get()))
+            self.solution = math.sqrt(eval(self.input_field.get()))
             self.clear_input()
             self.input_field.insert(0, round(self.solution, 10))
         except ValueError:
+            self.clear_input()
+            self.input_field.insert(0, "wrong value")
+        except SyntaxError:
             self.clear_input()
             self.input_field.insert(0, "wrong value")
 
     # number squared
     def square(self):
         try:
-            self.solution = float(self.input_field.get())**2
+            self.solution = eval(self.input_field.get())**2
             self.clear_input()
             self.input_field.insert(0, round(self.solution, 10))
         except ValueError:
+            self.clear_input()
+            self.input_field.insert(0, "wrong value")
+        except SyntaxError:
             self.clear_input()
             self.input_field.insert(0, "wrong value")
 
@@ -129,7 +138,7 @@ class App(Frame):
 myapp = App()
 
 myapp.master.title("Calculator")
-myapp.master.iconbitmap("calculator.ico")
+myapp.master.iconbitmap("icon.ico")
 myapp.master.resizable(False, False)
 
 # start the program
