@@ -1,5 +1,5 @@
-# Simple calculator GUI using Tkinter library 
+# Calculator
 ## Icon
-![alt text](/calculator.ico)
-
-[Image taken from](https://icon-icons.com/icon/calculator/30001)
+![alt text](/icon.ico)
+## Screenshot
+![GitHub Logo](/app.png)
